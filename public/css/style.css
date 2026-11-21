@@ -1,0 +1,615 @@
+
+/* =====================================
+   PUDING CALISTA - GLOBAL STYLE
+===================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'DM Sans', sans-serif;
+    background: #fffafa;
+    color: #292524;
+}
+
+button, a {
+    font-family: inherit;
+}
+
+button {
+    cursor: pointer;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* =====================================
+   NAVBAR
+===================================== */
+
+.navbar {
+    position: sticky;
+    top: 0;
+    z-index: 30;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid #ffe4e6;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+}
+
+.navbar-container {
+    max-width: 1152px;
+    height: 80px;
+    margin: auto;
+    padding: 0 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.menu-button {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    padding: 10px 17px;
+    border: none;
+    border-radius: 12px;
+    background: linear-gradient(to right, #f43f5e, #ec4899);
+    color: white;
+    font-size: 14px;
+    font-weight: 700;
+    box-shadow: 0 2px 5px rgba(244,63,94,0.15);
+    transition: 0.2s;
+}
+
+.menu-button:hover {
+    background: linear-gradient(to right, #e11d48, #db2777);
+}
+
+.menu-icon {
+    font-size: 19px;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-align: right;
+}
+
+.brand-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 21px;
+    font-weight: 800;
+    color: #4c0519;
+    letter-spacing: -0.5px;
+}
+
+.brand-text p {
+    color: #f43f5e;
+    opacity: 0.85;
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.brand-icon {
+    width: 44px;
+    height: 44px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 0;
+    background: transparent;
+    font-size: 24px;
+    box-shadow: none;
+    overflow: hidden;
+}
+
+/* =====================================
+   SIDEBAR OVERLAY
+===================================== */
+
+.sidebar-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 40;
+    background: rgba(28,25,23,0.6);
+    backdrop-filter: blur(2px);
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.3s;
+}
+
+.sidebar-overlay.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* =====================================
+   SIDEBAR
+===================================== */
+
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 50;
+    width: 320px;
+    max-width: 85vw;
+    height: 100vh;
+    background: white;
+    display: flex;
+    flex-direction: column;
+    border-right: 1px solid #ffe4e6;
+    box-shadow: 10px 0 30px rgba(0,0,0,0.12);
+    transform: translateX(-100%);
+    transition: transform 0.3s ease-in-out;
+}
+
+.sidebar.open {
+    transform: translateX(0);
+}
+
+.sidebar-header {
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: linear-gradient(to right, #fff1f2, #fce7f3);
+    border-bottom: 1px solid #ffe4e6;
+}
+
+.sidebar-brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.sidebar-logo {
+    font-size: 26px;
+}
+
+.sidebar-brand h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 19px;
+    color: #292524;
+}
+
+.sidebar-brand p {
+    margin-top: 3px;
+    color: #e11d48;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.close-sidebar {
+    width: 36px;
+    height: 36px;
+    border: 1px solid #fecdd3;
+    border-radius: 50%;
+    background: white;
+    color: #78716c;
+    font-size: 25px;
+    line-height: 1;
+}
+
+.close-sidebar:hover {
+    background: #ffe4e6;
+    color: #292524;
+}
+
+.sidebar-content {
+    flex: 1;
+    overflow-y: auto;
+    padding: 16px;
+}
+
+.sidebar-heading {
+    padding: 5px 8px 12px;
+    color: #a8a29e;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.sidebar-item {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+    padding: 12px;
+    margin-bottom: 8px;
+    border-radius: 16px;
+    color: #44403c;
+    transition: 0.2s;
+}
+
+.sidebar-item:hover {
+    background: #fff1f2;
+    color: #e11d48;
+}
+
+.sidebar-item.active {
+    background: #f43f5e;
+    color: white;
+    box-shadow: 0 4px 10px rgba(244,63,94,0.2);
+}
+
+.sidebar-item-icon {
+    width: 40px;
+    height: 40px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 12px;
+    background: #ffe4e6;
+    color: #e11d48;
+    font-size: 20px;
+}
+
+.sidebar-item.active .sidebar-item-icon {
+    background: rgba(255,255,255,0.2);
+    color: white;
+}
+
+.sidebar-item-text {
+    flex: 1;
+    min-width: 0;
+}
+
+.sidebar-item-text strong {
+    display: block;
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.sidebar-item-text small {
+    display: block;
+    margin-top: 3px;
+    overflow: hidden;
+    color: #a8a29e;
+    font-size: 10px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.sidebar-item.active .sidebar-item-text small {
+    color: #ffe4e6;
+}
+
+.sidebar-badge {
+    padding: 3px 7px;
+    border-radius: 20px;
+    background: #ffe4e6;
+    color: #e11d48;
+    font-size: 10px;
+    font-weight: 700;
+}
+
+.sidebar-item.active .sidebar-badge {
+    display: none;
+}
+
+.sidebar-footer {
+    padding: 16px 10px;
+    border-top: 1px solid #ffe4e6;
+    background: #fafaf9;
+    text-align: center;
+}
+
+.sidebar-footer p {
+    color: #78716c;
+    font-size: 11px;
+    font-weight: 600;
+}
+
+.sidebar-footer small {
+    display: block;
+    margin-top: 4px;
+    color: #a8a29e;
+    font-size: 10px;
+}
+
+/* =====================================
+   BERANDA SEMENTARA
+===================================== */
+
+.home-placeholder {
+    min-height: 75vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 20px;
+    text-align: center;
+    background: linear-gradient(135deg, #fff1f2, #fce7f3);
+}
+
+.home-placeholder-content h1 {
+    margin: 18px 0 8px;
+    color: #4c0519;
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(28px, 5vw, 46px);
+}
+
+.home-placeholder-content p {
+    color: #e11d48;
+    font-size: 16px;
+}
+
+.home-emoji {
+    font-size: 65px;
+}
+
+
+/* =====================================
+   KATALOG MENU PUDING
+===================================== */
+
+.catalog-section {
+    width: 100%;
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 32px 28px 48px;
+}
+
+.catalog-heading {
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto 28px;
+}
+
+.catalog-label {
+    display: inline-block;
+    padding: 6px 12px;
+    border-radius: 20px;
+    background: #ffe4e6;
+    color: #be123c;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.catalog-heading h2 {
+    margin: 12px 0 8px;
+    color: #292524;
+    font-family: Georgia, serif;
+    font-size: 32px;
+    font-weight: 800;
+}
+
+.catalog-heading p {
+    color: #57534e;
+    font-size: 14px;
+}
+
+.catalog-heading p strong {
+    color: #e11d48;
+}
+
+.catalog-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 20px;
+}
+
+.menu-card {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    background: white;
+    border: 1px solid #ffe4e6;
+    border-radius: 20px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+    transition: 0.3s;
+}
+
+.menu-card:hover {
+    border-color: #fda4af;
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.1);
+}
+
+.menu-image {
+    position: relative;
+    height: 190px;
+    overflow: hidden;
+    background: #fff1f2;
+}
+
+.menu-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s;
+}
+
+.menu-card:hover .menu-image img {
+    transform: scale(1.05);
+}
+
+.menu-badge {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    padding: 6px 12px;
+    background: rgba(255, 255, 255, 0.95);
+    color: #e11d48;
+    border: 1px solid #ffe4e6;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.menu-size {
+    position: absolute;
+    right: 12px;
+    bottom: 12px;
+    padding: 5px 10px;
+    background: rgba(0, 0, 0, 0.6);
+    color: white;
+    border-radius: 8px;
+    font-size: 11px;
+}
+
+.menu-content {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 14px;
+    padding: 18px;
+}
+
+.menu-content h3 {
+    color: #292524;
+    font-family: Georgia, serif;
+    font-size: 18px;
+    font-weight: 800;
+}
+
+.menu-content p {
+    margin-top: 6px;
+    color: #78716c;
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+.menu-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding-top: 12px;
+    border-top: 1px solid #fff1f2;
+}
+
+.menu-footer span {
+    display: block;
+    color: #a8a29e;
+    font-size: 11px;
+}
+
+.menu-footer strong {
+    display: block;
+    margin-top: 3px;
+    color: #e11d48;
+    font-size: 18px;
+    font-weight: 900;
+}
+
+.btn-pesan {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 42px;
+    padding: 9px 17px;
+    border-radius: 14px;
+    background: #f43f5e;
+    color: white;
+    font-size: 13px;
+    font-weight: 700;
+    text-decoration: none;
+    white-space: nowrap;
+    transition: 0.2s;
+}
+
+.btn-pesan:hover {
+    background: #e11d48;
+}
+
+.catalog-help {
+    margin-top: 26px;
+    padding: 16px;
+    border: 1px solid #ffe4e6;
+    border-radius: 16px;
+    background: #fff1f2;
+    color: #9f1239;
+    text-align: center;
+    font-size: 13px;
+}
+
+@media (max-width: 900px) {
+    .catalog-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 600px) {
+    .catalog-section {
+        padding: 24px 16px 36px;
+    }
+
+    .catalog-grid {
+        grid-template-columns: 1fr;
+        gap: 18px;
+    }
+
+    .catalog-heading h2 {
+        font-size: 27px;
+    }
+
+    .menu-image {
+        height: 210px;
+    }
+}
+
+/* =====================================
+   RESPONSIVE TABLET
+===================================== */
+
+@media (max-width: 900px) {
+    .catalog-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+/* =====================================
+   RESPONSIVE MOBILE
+===================================== */
+
+@media (max-width: 600px) {
+    .navbar-container {
+        height: 64px;
+        padding: 0 16px;
+    }
+
+    .menu-button {
+        padding: 9px 13px;
+        font-size: 13px;
+    }
+
+    .brand-name {
+        font-size: 17px;
+    }
+
+    .brand-text p {
+        font-size: 10px;
+    }
+
+    .brand-icon {
+        width: 38px;
+        height: 38px;
+        font-size: 21px;
+        border-radius: 13px;
+    }
+
+    .catalog-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .catalog-heading {
+        padding: 0 16px;
+    }
+
+    .catalog-heading h2 {
+        font-size: 28px;
+    }
+
+    .catalog-section {
+        padding: 24px 16px 40px;
+    }
+}
